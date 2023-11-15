@@ -165,6 +165,22 @@ http://localhost:9200/alfresco/_mapping
 
 ## 4. Run Reindexing App
 
+Before running Reindexing App (with target ACS 23.1 up & running), identify the maximum number Id in `ALF_NODE` table.
+
+```
+# psql --u alfresco
+psql (14.4 (Debian 14.4-1.pgdg110+1))
+Type "help" for help.
+
+alfresco=# select max(id) from alf_node;
+ max
+-----
+ 896
+(1 row)
+```
+
+This result will define the limit for the reindexing process `896`
+
 At this point, Reindeing App can be run to populate OpenSearch index in *target* ACS
 
 ```sh
