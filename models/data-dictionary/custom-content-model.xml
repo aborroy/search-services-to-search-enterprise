@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="cfp:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Content model for Call for Papers management</description>
+    <version>1.0</version>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://www.alfresco.org/model/cfp/1.0" prefix="cfp"/>
+    </namespaces>
+
+    <types>
+        <type name="cfp:proposal">
+            <title>Proposal</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="cfp:dateIn">
+                    <type>d:date</type>
+                </property>
+                <property name="cfp:submitter">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </type>
+    </types>
+    
+    <aspects>
+        <aspect name="cfp:status">
+            <title>Proposal status</title>
+            <properties>
+                <property name="cfp:status">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+    </aspects>
+
+</model>
